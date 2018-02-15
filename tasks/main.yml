@@ -1,6 +1,10 @@
 ---
 # tasks file for papertrail
 
+- name: install rsyslog
+  package:
+    name: rsyslog
+
 - name: Check rsyslogd
   service: name=rsyslog state=started enabled=yes
   when: papertrail_service == "rsyslog"
